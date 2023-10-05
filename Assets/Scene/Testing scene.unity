@@ -766,7 +766,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.56
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &389350862
 MeshRenderer:
@@ -904,10 +904,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 389350867}
-  Speed: 500
+  Speed: 5
   movementX: 0
   movementY: 0
   orientation: {fileID: 1823688467}
+  boostsY: 10
+  boostsX: 2
+  timerX: 60
+  BoostY: 0
+  BoostX: 0
 --- !u!114 &389350870
 MonoBehaviour:
   m_ObjectHideFlags: 0
