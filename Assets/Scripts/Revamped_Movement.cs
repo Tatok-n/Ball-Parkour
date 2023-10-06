@@ -67,16 +67,12 @@ public class Revamped_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.53f);
+        Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.53f); //Checks for any touching walls
         int important = 0;
         foreach (Collider col in hitColliders)
         {
             if (col.tag == "Ground")
-            {
-                important += 1;
-            }
-
-
+            {important += 1; }
         }
         if (important > 0)
         {
@@ -89,7 +85,6 @@ public class Revamped_Movement : MonoBehaviour
             Speed = 1f;
         }
     }
-
 
     int[] BoostTimer(float Boostparam, int NumBoosts, int timer) //return Boosts, timer updates
     {
