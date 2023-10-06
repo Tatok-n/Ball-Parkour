@@ -8,9 +8,12 @@ public class Revamped_Movement : MonoBehaviour
 {
     public  Rigidbody rb;
     public float Speed;
+    public float Velocity;
+    public int JumpForce;
+    public Transform Spherepoint;
     public float BoostValue;
-    public float movementX;
-    public float movementY;
+    private float movementX;
+    private float movementY;
     public Transform orientation;
     public int MaxBoosts;
     public int boostsY;
@@ -20,13 +23,12 @@ public class Revamped_Movement : MonoBehaviour
     public int timerY;
     public bool BoostY;
     public bool BoostX;
-    public float[] parametersX = new float[2];
-    public float[] parametersY = new float[2];
-    public int[] BoostUpdaterX = new int[2];
-    public int[] BoostUpdaterY = new int[2];
-
-
-
+    private float[] parametersX = new float[2];
+    private float[] parametersY = new float[2];
+    private int[] BoostUpdaterX = new int[2];
+    private int[] BoostUpdaterY = new int[2];
+    public bool isGrouned;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,11 @@ public class Revamped_Movement : MonoBehaviour
         Vector2 movementVector = movementValue.Get<Vector2>();
         movementX = movementVector.x;
         movementY = movementVector.y;
+    }
+    
+    void OnJump()
+    {
+        rb.AddForce(orientation.up*(JumpForce*Velocity*0.5f));
     }
 
     float[] BoostManager (float Direction1, float Direction2, bool Boost, int counter)
@@ -57,11 +64,30 @@ public class Revamped_Movement : MonoBehaviour
         return new[] { 0f, 2f };
     }
     
-
     // Update is called once per frame
     void Update()
     {
-        
+        Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.53f);
+        int important = 0;
+        foreach (Collider col in hitColliders)
+        {
+            if (col.tag == "Ground")
+            {
+                important += 1;
+            }
+
+
+        }
+        if (important > 0)
+        {
+            JumpForce = 150;
+            Speed = 5f;
+        }
+        else
+        {
+            JumpForce = 0;
+            Speed = 1f;
+        }
     }
 
 
@@ -82,13 +108,13 @@ public class Revamped_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
+        Velocity = rb.velocity.magnitude;
         Vector3 Forward = orientation.right; //right is forward for some reason, change later on 
         Vector3 Right = orientation.forward;
         Forward.y = 0f;
         Right.y = 0f;
         
-        //float[] parametersX = new float[2];
         parametersX = BoostManager(movementX, movementY, BoostX, boostsX);
         if (parametersX[1] != 2)
         {BoostX = Convert.ToBoolean(parametersX[1]);}
@@ -109,7 +135,7 @@ public class Revamped_Movement : MonoBehaviour
         }
 
         Vector3 movement = (movementX+parametersX[0])*Forward+ (movementY + parametersY[0]) * Right;
-        Debug.DrawLine(rb.position, rb.position + movement);
+              
         rb.AddForce(movement*Speed);
     }
 }
