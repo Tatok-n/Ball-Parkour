@@ -27,7 +27,6 @@ public class Revamped_Movement : MonoBehaviour
     private float[] parametersY = new float[2];
     private int[] BoostUpdaterX = new int[2];
     private int[] BoostUpdaterY = new int[2];
-    public bool isGrouned;
     
     // Start is called before the first frame update
     void Start()
