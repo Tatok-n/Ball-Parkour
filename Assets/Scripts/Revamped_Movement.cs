@@ -27,13 +27,23 @@ public class Revamped_Movement : MonoBehaviour
     private float[] parametersY = new float[2];
     private int[] BoostUpdaterX = new int[2];
     private int[] BoostUpdaterY = new int[2];
-    
+    private int[] BurtParam = new int[2];
+    public PlayerInput beep;
+    public bool burstmode;
+    public int burstTimer;
+    public int Bursts;
+    public int burstForce;
+    public float burstval;
+    public Vector3 LockPosition;
+  
+
     // Start is called before the first frame update
     void Start()
     {
         BoostX = true;
         BoostY = true;
         timerX = timerY = refresh;
+        
     }
 
     void OnMove (InputValue movementValue)
@@ -47,6 +57,27 @@ public class Revamped_Movement : MonoBehaviour
     {
         rb.AddForce(orientation.up*(JumpForce*Velocity*0.5f));
     }
+
+    
+    void OnBurst(InputValue BurstValue)
+    {
+        
+        burstval = BurstValue.Get<float>();
+        if (Bursts==0)
+        {
+            burstval = 0;
+        }
+        if (burstval == 1)
+        {
+            LockPosition = transform.position;
+            burstmode = true;
+        }
+        
+    }
+        
+    
+
+    
 
     float[] BoostManager (float Direction1, float Direction2, bool Boost, int counter)
     {
@@ -66,6 +97,7 @@ public class Revamped_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.53f); //Checks for any touching walls
         int important = 0;
         foreach (Collider col in hitColliders)
@@ -100,9 +132,45 @@ public class Revamped_Movement : MonoBehaviour
     
     }
 
+    int[] BurstTimer(int num, int counter)
+    {
+        if (num == 3)
+        {
+            return new[] { 0, 2 };
+        } else if (num<3 & counter>=120)
+        {
+            return new[] { 1, -counter };
+        } else if (num < 3 & counter < 120)
+        {
+            return new[] { 0, 1 };
+        }
+        return new[] { 0, 2 };
+    }
+
     private void FixedUpdate()
     {
+        BurtParam = BurstTimer(Bursts, burstTimer);
+        if (BurtParam[1]!=2)
+        {
+            Bursts += BurtParam[0];
+            burstTimer += BurtParam[1];
+        }
+        if (burstmode)
+        {
+            
+            transform.position = LockPosition;
+            rb.velocity /= 5;
+            
 
+            if (burstval == 0f)
+            {
+                Bursts -= 1;
+                rb.AddForce(orientation.forward * burstForce);
+                burstmode = false;
+                return;
+            }
+            return;
+        }
         Velocity = rb.velocity.magnitude;
         Vector3 Forward = orientation.right; //right is forward for some reason, change later on 
         Vector3 Right = orientation.forward;
@@ -131,5 +199,11 @@ public class Revamped_Movement : MonoBehaviour
         Vector3 movement = (movementX+parametersX[0])*Forward+ (movementY + parametersY[0]) * Right;
               
         rb.AddForce(movement*Speed);
+    }
+
+    private void LateUpdate()
+    {
+        
+        
     }
 }

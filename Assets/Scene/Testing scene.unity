@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1055.315, g: 853.26953, b: 854.8086, a: 1}
+  m_IndirectSpecularColor: {r: 1054.6973, g: 852.6328, b: 854.2588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -893,6 +893,13 @@ MonoBehaviour:
   timerY: 60
   BoostY: 0
   BoostX: 0
+  beep: {fileID: 389350870}
+  burstmode: 0
+  burstTimer: 0
+  Bursts: 0
+  burstForce: 2000
+  burstval: 0
+  LockPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &389350870
 MonoBehaviour:
   m_ObjectHideFlags: 0
