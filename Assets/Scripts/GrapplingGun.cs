@@ -16,8 +16,10 @@ public class GrapplingGun : MonoBehaviour
    public Transform PredictionPoint;
    public RaycastHit predictionHit;
    public Vector3 realHitPoint;
+   public Rigidbody rb;
+   public Revamped_Movement mvmt;
 
-   void Awake() {
+    void Awake() {
     lr = GetComponent<LineRenderer>();
     maxDistance = 1000f;
    }
@@ -39,9 +41,15 @@ public class GrapplingGun : MonoBehaviour
     } 
    }
 
-    
+   
    void LateUpdate() {
     DrawRope();
+    if (IsGrappling())
+        {
+            Vector3 Forward = mvmt.orientation.forward;
+            Debug.DrawLine(rb.position, Forward, Color.red);
+            rb.AddForce(Forward * 2f);
+        }
     
    }
 
@@ -101,7 +109,6 @@ public class GrapplingGun : MonoBehaviour
     lr.SetPosition(1, grapplePoint);
    }
 
-   
 
    void StopGrapple() {
     lr.positionCount = 0;
