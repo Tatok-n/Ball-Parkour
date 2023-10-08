@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "Hold(duration=0.1)",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "GravShift",
+                    "type": "Value",
+                    "id": "400904f7-7741-430b-ba96-eeeea8953352",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -304,6 +313,83 @@
                     "action": "Burst",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Q",
+                    "id": "56c8d65e-a5c2-4fcb-88f9-6a5ce92bf6f1",
+                    "path": "3DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GravShift",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "5c2536d8-b31c-47dd-b1ae-20e460e670b4",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "GravShift",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "f162f0e4-b8c2-4a26-8ca0-6fe4dbb34003",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "GravShift",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "39a2a42d-1a58-4ce7-bf4e-c4d819235bdc",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GravShift",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "8851c0a2-7d1a-4729-902f-e4633ca8890c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GravShift",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "forward",
+                    "id": "8e34ac72-a307-4003-9337-103b0c2e3610",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GravShift",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "backward",
+                    "id": "65594e4f-d524-4287-8b29-62ea2576d285",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GravShift",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

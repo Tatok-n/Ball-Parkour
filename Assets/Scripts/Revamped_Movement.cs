@@ -35,6 +35,7 @@ public class Revamped_Movement : MonoBehaviour
     public int burstForce;
     public float burstval;
     public Vector3 LockPosition;
+    public Vector3 Gravmod;
   
 
     // Start is called before the first frame update
@@ -74,7 +75,24 @@ public class Revamped_Movement : MonoBehaviour
         }
         
     }
-        
+
+
+    void OnGravShift(InputValue grav)
+    {
+        Vector3 Gravity = grav.Get<Vector3>();
+        Gravmod.y = Gravity.y;
+        Gravmod.y += Physics.gravity.y;
+        //if (Gravmod.y <-9.8)
+        //{
+        //    Gravmod.y += 1;
+        //    return;
+        //} else if (Gravmod.y >0 )
+        //{
+        //    Gravmod.y -= 1;
+        //    return;
+        //}
+        Physics.gravity = Gravmod;
+    }
     
 
     
@@ -149,6 +167,7 @@ public class Revamped_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(Physics.gravity.y);
         BurtParam = BurstTimer(Bursts, burstTimer);
         if (BurtParam[1]!=2)
         {
@@ -157,11 +176,8 @@ public class Revamped_Movement : MonoBehaviour
         }
         if (burstmode)
         {
-            
             transform.position = LockPosition;
             rb.velocity /= 5;
-            
-
             if (burstval == 0f)
             {
                 Bursts -= 1;
