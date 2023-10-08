@@ -36,7 +36,8 @@ public class Revamped_Movement : MonoBehaviour
     public float burstval;
     public Vector3 LockPosition;
     public Vector3 Gravmod;
-  
+    public ParticleSystem burst;
+
 
     // Start is called before the first frame update
     void Start()
@@ -183,6 +184,7 @@ public class Revamped_Movement : MonoBehaviour
                 Bursts -= 1;
                 rb.AddForce(orientation.forward * burstForce);
                 burstmode = false;
+                burst.Play();
                 return;
             }
             return;
