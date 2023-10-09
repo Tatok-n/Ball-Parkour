@@ -37,6 +37,7 @@ public class Revamped_Movement : MonoBehaviour
     public Vector3 LockPosition;
     public Vector3 Gravmod;
     public ParticleSystem burst;
+    public ParticleSystem jumper;
 
 
     // Start is called before the first frame update
@@ -58,6 +59,10 @@ public class Revamped_Movement : MonoBehaviour
     void OnJump()
     {
         rb.AddForce(orientation.up*(JumpForce*Velocity*0.5f));
+        if (JumpForce != 0)
+        {
+            jumper.Play();
+        }
     }
 
     
