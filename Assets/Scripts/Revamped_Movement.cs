@@ -37,7 +37,8 @@ public class Revamped_Movement : MonoBehaviour
     public Vector3 LockPosition;
     public Vector3 Gravmod;
     public ParticleSystem burst;
-    public ParticleSystem jumper;
+    public bool isGrounded;
+    
 
 
     // Start is called before the first frame update
@@ -58,11 +59,16 @@ public class Revamped_Movement : MonoBehaviour
     
     void OnJump()
     {
-        rb.AddForce(orientation.up*(JumpForce*Velocity*0.5f));
-        if (JumpForce != 0)
+        float SpeedMult = Velocity;
+        if (SpeedMult<1)
         {
-            jumper.Play();
+            SpeedMult = 1f;
+        } else if (SpeedMult > 7)
+        {
+            SpeedMult = 7f;
         }
+        rb.AddForce(orientation.up*(JumpForce* SpeedMult * 0.5f));
+        
     }
 
     
@@ -122,12 +128,15 @@ public class Revamped_Movement : MonoBehaviour
     void Update()
     {
         
-        Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.53f); //Checks for any touching walls
+        Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.51f); //Checks for any touching walls
         int important = 0;
         foreach (Collider col in hitColliders)
         {
             if (col.tag == "Ground")
-            {important += 1; }
+            {important += 1;
+            isGrounded = true;
+            }
+            
         }
         if (important > 0)
         {
@@ -136,6 +145,7 @@ public class Revamped_Movement : MonoBehaviour
         }
         else
         {
+            isGrounded = false;
             JumpForce = 0;
             Speed = 1f;
         }
