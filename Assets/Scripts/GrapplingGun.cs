@@ -7,7 +7,7 @@ public class GrapplingGun : MonoBehaviour
    private LineRenderer lr;
    private Vector3 grapplePoint;
    public LayerMask whatIsGrappleable;
-   public Transform gunTip, camera, player;
+   public Transform gunTip, gunTip2, camera, player;
    private float maxDistance;
    public float springdef,damperdef,massScaledef,MaxDistanceRed,activeDamper,activeSpring;
    private SpringJoint joint;
@@ -18,9 +18,11 @@ public class GrapplingGun : MonoBehaviour
    public Vector3 realHitPoint;
    public Rigidbody rb;
    public Revamped_Movement mvmt;
+   public LineRenderer lr1, lr2;
+    public float SwingForce;
 
     void Awake() {
-    lr = GetComponent<LineRenderer>();
+    //lr = GetComponent<LineRenderer>();
     maxDistance = 1000f;
    }
 
@@ -48,7 +50,7 @@ public class GrapplingGun : MonoBehaviour
         {
             Vector3 Forward = mvmt.orientation.forward;
             Debug.DrawLine(rb.position, Forward, Color.red);
-            rb.AddForce(Forward * 2f);
+            rb.AddForce(Forward * SwingForce);
         }
     
    }
@@ -95,24 +97,28 @@ public class GrapplingGun : MonoBehaviour
     joint.damper = damperdef;
     joint.massScale = massScaledef;
 
-    lr.positionCount = 2;
+        lr1.positionCount = 2;
+        lr2.positionCount = 2;
 
 
-   }
+    }
    
 
    void DrawRope() {
 
     if (!joint) return;
 
-    lr.SetPosition(0, gunTip.position);
-    lr.SetPosition(1, grapplePoint);
-   }
+        lr1.SetPosition(0, gunTip.position);
+        lr1.SetPosition(1, grapplePoint);
+        lr2.SetPosition(0, gunTip2.position);
+        lr2.SetPosition(1, grapplePoint);
+    }
 
 
    void StopGrapple() {
-    lr.positionCount = 0;
-    Destroy(joint);
+        lr1.positionCount = 0;
+        lr2.positionCount = 0;
+        Destroy(joint);
 
    }
 

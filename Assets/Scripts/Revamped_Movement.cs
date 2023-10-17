@@ -128,10 +128,11 @@ public class Revamped_Movement : MonoBehaviour
     void Update()
     {
         
-        Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.51f); //Checks for any touching walls
+        Collider[] hitColliders = Physics.OverlapSphere(Spherepoint.position, 0.53f); //Checks for any touching walls
         int important = 0;
         foreach (Collider col in hitColliders)
         {
+            Debug.Log(col.tag);
             if (col.tag == "Ground")
             {important += 1;
             isGrounded = true;
