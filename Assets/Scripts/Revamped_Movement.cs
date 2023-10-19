@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using System;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.VFX;
 
 public class Revamped_Movement : MonoBehaviour
 {
@@ -38,9 +39,10 @@ public class Revamped_Movement : MonoBehaviour
     public float burstval;
     public Vector3 LockPosition;
     public Vector3 Gravmod;
-    public ParticleSystem burst;
+    //public ParticleSystem burst;
     public bool isGrounded;
     public Volume Postpr;
+    public VisualEffect burst;
 
 
     // Start is called before the first frame update
@@ -202,7 +204,8 @@ public class Revamped_Movement : MonoBehaviour
                 Bursts -= 1;
                 rb.AddForce(orientation.forward * burstForce);
                 burstmode = false;
-                burst.Play();
+                burst.Reinit();
+                //burst.Play();
                 return;
             }
             return;
