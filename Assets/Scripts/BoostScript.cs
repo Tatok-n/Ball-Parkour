@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.VFX;
 
 public class BoostScript : MonoBehaviour
 {
@@ -10,10 +13,12 @@ public class BoostScript : MonoBehaviour
     public ParticleSystem pr;
     public bool IsMulti;
     public float Strength;
+    
     // Start is called before the first frame update
     void Start()
     {
         Direction = Target.position - transform.position;
+        
     }
 
     // Update is called once per frame
