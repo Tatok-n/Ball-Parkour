@@ -260,7 +260,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Exposure Weight",
     "m_StageCapability": 3,
-    "m_Value": 0.6700000166893005,
+    "m_Value": 0.0,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -532,7 +532,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Intensity",
     "m_StageCapability": 3,
-    "m_Value": 204.1999969482422,
+    "m_Value": 31.399999618530275,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }

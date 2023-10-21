@@ -20,7 +20,7 @@ public class BounceScript : MonoBehaviour
     {
         Direction = Target.position - transform.position;
         NormalVect = Normal.position - transform.position;
-        Vector3 v = BounceBoost.GetVector3("Pos");
+        
         
     }
 

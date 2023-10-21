@@ -13,7 +13,9 @@ public class BoostScript : MonoBehaviour
     public ParticleSystem pr;
     public bool IsMulti;
     public float Strength;
-    
+    public VisualEffect Boost;
+    public Transform ori;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +26,16 @@ public class BoostScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Boost.SetVector3("Dir", rm.rb.velocity);
+        Boost.SetVector3("Boi", Ori.position);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        pr.Play();
+        Boost.Play();
         if (!IsMulti)
         {
-            rm.rb.AddForce(Direction.normalized * Strength);
+            rm.rb.AddForce(Direction* Strength);
         }
         else
         {

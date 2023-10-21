@@ -152,13 +152,13 @@ MonoBehaviour:
     m_Value: 2
   threshold:
     m_OverrideState: 1
-    m_Value: 2.05
+    m_Value: 10.5
   intensity:
     m_OverrideState: 1
-    m_Value: 0.025
+    m_Value: 0.099
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.48
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -201,7 +201,7 @@ MonoBehaviour:
     m_Value: 1
   tracing:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 2
   rayMiss:
     m_OverrideState: 0
     m_Value: 3
@@ -276,6 +276,157 @@ MonoBehaviour:
   receiverMotionRejection:
     m_OverrideState: 0
     m_Value: 1
+--- !u!114 &-265347656983579099
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
+  m_Name: Exposure
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 0
+  meteringMode:
+    m_OverrideState: 0
+    m_Value: 2
+  luminanceSource:
+    m_OverrideState: 0
+    m_Value: 1
+  fixedExposure:
+    m_OverrideState: 1
+    m_Value: 5.788751
+  compensation:
+    m_OverrideState: 0
+    m_Value: 0
+  limitMin:
+    m_OverrideState: 0
+    m_Value: -1
+  limitMax:
+    m_OverrideState: 0
+    m_Value: 14
+  curveMap:
+    m_OverrideState: 0
+    m_Value:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -10
+        value: -10
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 20
+        value: 20
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  limitMinCurveMap:
+    m_OverrideState: 0
+    m_Value:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -10
+        value: -12
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 20
+        value: 18
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  limitMaxCurveMap:
+    m_OverrideState: 0
+    m_Value:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -10
+        value: -8
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 20
+        value: 22
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  adaptationMode:
+    m_OverrideState: 0
+    m_Value: 1
+  adaptationSpeedDarkToLight:
+    m_OverrideState: 0
+    m_Value: 3
+  adaptationSpeedLightToDark:
+    m_OverrideState: 0
+    m_Value: 1
+  weightTextureMask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  histogramPercentages:
+    m_OverrideState: 0
+    m_Value: {x: 40, y: 90}
+  histogramUseCurveRemapping:
+    m_OverrideState: 0
+    m_Value: 0
+  targetMidGray:
+    m_OverrideState: 0
+    m_Value: 0
+  centerAroundExposureTarget:
+    m_OverrideState: 0
+    m_Value: 0
+  proceduralCenter:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  proceduralRadii:
+    m_OverrideState: 0
+    m_Value: {x: 0.3, y: 0.3}
+  maskMinIntensity:
+    m_OverrideState: 0
+    m_Value: -30
+  maskMaxIntensity:
+    m_OverrideState: 0
+    m_Value: 30
+  proceduralSoftness:
+    m_OverrideState: 0
+    m_Value: 0.5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,10 +443,11 @@ MonoBehaviour:
   - {fileID: 1142777632297148762}
   - {fileID: -7724654706381055090}
   - {fileID: 4703145436271149452}
-  - {fileID: 7642060734654139733}
+  - {fileID: -265347656983579099}
   - {fileID: -7627780361409854544}
   - {fileID: 1118246449228769551}
   - {fileID: -2829934974147980944}
+  - {fileID: 8467252159836985837}
 --- !u!114 &1118246449228769551
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -308,13 +460,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   quality:
     m_OverrideState: 1
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.18
+    m_Value: 0.09
   maximumVelocity:
     m_OverrideState: 1
     m_Value: 200
@@ -461,7 +613,7 @@ MonoBehaviour:
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
---- !u!114 &7642060734654139733
+--- !u!114 &8467252159836985837
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,145 +622,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
-  m_Name: Exposure
+  m_Script: {fileID: 11500000, guid: f086a068d4c5889438831b3ae9afc11c, type: 3}
+  m_Name: Tonemapping
   m_EditorClassIdentifier: 
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 4
-  meteringMode:
-    m_OverrideState: 0
     m_Value: 2
-  luminanceSource:
-    m_OverrideState: 0
-    m_Value: 1
-  fixedExposure:
-    m_OverrideState: 1
-    m_Value: 9.909466
-  compensation:
+  toeStrength:
     m_OverrideState: 0
     m_Value: 0
-  limitMin:
-    m_OverrideState: 1
-    m_Value: 0.10699636
-  limitMax:
-    m_OverrideState: 1
-    m_Value: 14
-  curveMap:
-    m_OverrideState: 0
-    m_Value:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: -10
-        value: -10
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 20
-        value: 20
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  limitMinCurveMap:
-    m_OverrideState: 0
-    m_Value:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: -10
-        value: -12
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 20
-        value: 18
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  limitMaxCurveMap:
-    m_OverrideState: 0
-    m_Value:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: -10
-        value: -8
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 20
-        value: 22
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  adaptationMode:
-    m_OverrideState: 0
-    m_Value: 1
-  adaptationSpeedDarkToLight:
-    m_OverrideState: 0
-    m_Value: 3
-  adaptationSpeedLightToDark:
-    m_OverrideState: 0
-    m_Value: 1
-  weightTextureMask:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
-  histogramPercentages:
-    m_OverrideState: 0
-    m_Value: {x: 40, y: 90}
-  histogramUseCurveRemapping:
-    m_OverrideState: 0
-    m_Value: 0
-  targetMidGray:
-    m_OverrideState: 0
-    m_Value: 0
-  centerAroundExposureTarget:
-    m_OverrideState: 0
-    m_Value: 0
-  proceduralCenter:
-    m_OverrideState: 0
-    m_Value: {x: 0.5, y: 0.5}
-  proceduralRadii:
-    m_OverrideState: 0
-    m_Value: {x: 0.15, y: 0.15}
-  maskMinIntensity:
-    m_OverrideState: 0
-    m_Value: -30
-  maskMaxIntensity:
-    m_OverrideState: 0
-    m_Value: 30
-  proceduralSoftness:
+  toeLength:
     m_OverrideState: 0
     m_Value: 0.5
+  shoulderStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  shoulderLength:
+    m_OverrideState: 0
+    m_Value: 0.5
+  shoulderAngle:
+    m_OverrideState: 0
+    m_Value: 0
+  gamma:
+    m_OverrideState: 0
+    m_Value: 1
+  lutTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  lutContribution:
+    m_OverrideState: 0
+    m_Value: 1

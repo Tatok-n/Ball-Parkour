@@ -136,7 +136,7 @@ public class Revamped_Movement : MonoBehaviour
         int important = 0;
         foreach (Collider col in hitColliders)
         {
-            Debug.Log(col.tag);
+            
             if (col.tag == "Ground")
             {important += 1;
             isGrounded = true;
