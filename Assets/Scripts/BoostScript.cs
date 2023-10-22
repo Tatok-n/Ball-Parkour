@@ -27,7 +27,7 @@ public class BoostScript : MonoBehaviour
     void Update()
     {
         Boost.SetVector3("Dir", rm.rb.velocity);
-        Boost.SetVector3("Boi", Ori.position);
+        Boost.SetVector3("Boi", ori.position);
     }
 
     void OnCollisionEnter(Collision collision)
