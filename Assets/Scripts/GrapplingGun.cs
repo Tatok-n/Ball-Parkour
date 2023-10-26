@@ -41,6 +41,10 @@ public class GrapplingGun : MonoBehaviour
         joint.spring = activeSpring;
         joint.damper = activeDamper;
     } 
+    if ((IsGrappling()) && (lr2.positionCount == 0))
+        {
+            Destroy(joint);
+        }
    }
 
    
