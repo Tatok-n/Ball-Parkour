@@ -19,7 +19,7 @@ public class BoostScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Direction = Target.position - transform.position;
+        Direction = (Target.position - transform.position).normalized;
         
     }
 
@@ -39,7 +39,7 @@ public class BoostScript : MonoBehaviour
         }
         else
         {
-            rm.rb.AddForce(rm.rb.velocity.normalized * Strength);
+            rm.rb.velocity *= 2f;
         }
 
 

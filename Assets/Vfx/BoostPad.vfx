@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 7
     y: -190
     width: 1359
-    height: 2825
+    height: 2824
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -874,7 +874,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.551886796951294,"g":1.0,"b":0.9804741144180298,"a":1.0},"time":0.0},{"color":{"r":0.21586865186691285,"g":0.8220238089561462,"b":0.9339622855186462,"a":1.0},"time":0.37059587240219118},{"color":{"r":0.9411764740943909,"g":0.26274508237838747,"b":0.730961799621582,"a":1.0},"time":0.8470588326454163}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.31401586532592776,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.0,"g":0.8469946384429932,"b":1.0,"a":1.0},"time":0.3764705955982208},{"color":{"r":1.0,"g":0.0,"b":0.687861442565918,"a":1.0},"time":0.8500038385391235}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -1922,8 +1922,8 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":6.409999847412109,"y":0.0,"z":0.0}}'
-    m_Space: 1
+      m_SerializableObject: '{"vector":{"x":68.4000015258789,"y":0.0,"z":0.0}}'
+    m_Space: 0
   m_Property:
     name: Velocity
     m_serializedType:
@@ -1999,8 +1999,7 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots:
-  - {fileID: 8926484042661614942}
+  m_LinkedSlots: []
 --- !u!114 &8926484042661614668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2912,7 +2911,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614807}
       inputSlot: {fileID: 8926484042661614838}
-    position: {x: 725.7091, y: 1350.1777}
+    position: {x: 801, y: 1167}
     expandedSlots: []
     expanded: 1
 --- !u!114 &8926484042661614807
@@ -3067,7 +3066,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 568.675, y: 591.1575}
+  m_UIPosition: {x: 461, y: 553}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5345,7 +5344,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 834, y: 1792}
+  m_UIPosition: {x: 830, y: 1741}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5481,7 +5480,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 559, y: 676}
+  m_UIPosition: {x: 569, y: 669}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5658,7 +5657,7 @@ MonoBehaviour:
   m_OutputSlots: []
   m_Disabled: 0
   Mode: 1
-  NoiseType: 0
+  NoiseType: 2
 --- !u!114 &8926484042661614920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6126,7 +6125,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1.13
+      m_SerializableObject: 2.51
     m_Space: 2147483647
   m_Property:
     name: Intensity
@@ -6320,7 +6319,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 691, y: 676}
+  m_UIPosition: {x: 738, y: 608}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6439,5 +6438,4 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
-  m_LinkedSlots:
-  - {fileID: 8926484042661614667}
+  m_LinkedSlots: []

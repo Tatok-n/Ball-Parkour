@@ -39,7 +39,6 @@ public class Revamped_Movement : MonoBehaviour
     public float burstval;
     public Vector3 LockPosition;
     public Vector3 Gravmod;
-    //public ParticleSystem burst;
     public bool isGrounded;
     public Volume Postpr;
     public VisualEffect burst;
@@ -188,7 +187,7 @@ public class Revamped_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(Physics.gravity.y);
+        
         BurtParam = BurstTimer(Bursts, burstTimer);
         if (BurtParam[1]!=2)
         {
@@ -204,7 +203,7 @@ public class Revamped_Movement : MonoBehaviour
                 Bursts -= 1;
                 rb.AddForce(orientation.forward * burstForce);
                 burstmode = false;
-                burst.Reinit();
+                burst.Play();
                 //burst.Play();
                 return;
             }

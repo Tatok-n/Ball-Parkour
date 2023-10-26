@@ -380,13 +380,13 @@ MonoBehaviour:
     m_Value: 1
   tracing:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 4
   m_MinSmoothness:
     m_OverrideState: 0
-    m_Value: 0.9
+    m_Value: 0.4
   m_SmoothnessFadeStart:
     m_OverrideState: 0
-    m_Value: 0.9
+    m_Value: 0.5
   reflectSky:
     m_OverrideState: 0
     m_Value: 1
@@ -433,7 +433,7 @@ MonoBehaviour:
     m_Value: 1
   m_DenoiserRadius:
     m_OverrideState: 0
-    m_Value: 8
+    m_Value: 12
   m_AffectSmoothSurfaces:
     m_OverrideState: 0
     m_Value: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0}
   lowestCloudAltitude:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 328.52
   cloudThickness:
     m_OverrideState: 1
     m_Value: 10000
@@ -542,7 +542,7 @@ MonoBehaviour:
     m_Value: 0
   cloudPreset:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2
   cumulusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -572,13 +572,13 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 64
   customDensityCurve:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0
+        time: -0.0416687
+        value: 0.8183975
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -586,8 +586,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
-        value: 1
+        time: 0
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
     m_Value: 2.5
   shapeOffset:
     m_OverrideState: 1
-    m_Value: {x: -221.46, y: -38.46, z: -927.4}
+    m_Value: {x: -109.33, y: -38.46, z: -927.4}
   erosionFactor:
     m_OverrideState: 0
     m_Value: 0.5
