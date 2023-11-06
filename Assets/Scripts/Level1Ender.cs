@@ -16,7 +16,7 @@ public class Level1Ender : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter()
+    void OnTriggerEnter()
     {
         lvl.levelStatus[0] = true;
         lvl.ChangeNeeded = true;

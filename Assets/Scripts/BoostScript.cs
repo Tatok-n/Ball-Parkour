@@ -30,7 +30,7 @@ public class BoostScript : MonoBehaviour
         Boost.SetVector3("Boi", ori.position);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter()
     {
         Boost.Play();
         if (!IsMulti)

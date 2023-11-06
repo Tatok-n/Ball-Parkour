@@ -8,7 +8,7 @@ public class GrapplingGun : MonoBehaviour
    private Vector3 grapplePoint;
    public LayerMask whatIsGrappleable;
    public Transform gunTip, gunTip2, camera, player;
-   private float maxDistance;
+   public float maxDistance, range;
    public float springdef,damperdef,massScaledef,MaxDistanceRed,activeDamper,activeSpring;
    private SpringJoint joint;
    public Vector3 pointlocation;
@@ -19,7 +19,8 @@ public class GrapplingGun : MonoBehaviour
    public Rigidbody rb;
    public Revamped_Movement mvmt;
    public LineRenderer lr1, lr2;
-    public float SwingForce;
+   public float SwingForce;
+   public GameObject sphereboi;
 
     void Awake() {
     //lr = GetComponent<LineRenderer>();
@@ -41,9 +42,11 @@ public class GrapplingGun : MonoBehaviour
         joint.spring = activeSpring;
         joint.damper = activeDamper;
     } 
+    
     if ((IsGrappling()) && (lr2.positionCount == 0))
         {
-            Destroy(joint);
+            
+            Destroy(sphereboi.GetComponent<SpringJoint>()); //Fixes the issue wtih invisible joints
         }
    }
 
@@ -77,14 +80,16 @@ public class GrapplingGun : MonoBehaviour
         else if (SphereCastHit.point != Vector3.zero) {
             realHitPoint = SphereCastHit.point;
         }
-
         else realHitPoint = Vector3.zero;
-
+        if (hit.distance > range)
+        {
+            realHitPoint = Vector3.zero;
+        }
     }
 
    void StartGrapple() {
     grapplePoint = realHitPoint;
-    if (grapplePoint == Vector3.zero) {
+    if ((grapplePoint == Vector3.zero) || (Vector3.Distance(grapplePoint,player.position)> range)) {
         return;
     }
     joint = player.gameObject.AddComponent<SpringJoint>();
@@ -92,8 +97,9 @@ public class GrapplingGun : MonoBehaviour
     joint.connectedAnchor = grapplePoint;
 
     float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
+
     // The distance grapple will try to keep from grapplepoint
-    joint.maxDistance = distanceFromPoint * 0.8f;
+    joint.maxDistance = distanceFromPoint * 1.15f;
     joint.minDistance = distanceFromPoint * 0.25f;
 
     //behavior of grapple

@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
         {
             if (levelStatus[0])
             {
-                SceneManager.LoadScene("Testing scene", LoadSceneMode.Single);
+                SceneManager.LoadScene("Level_2", LoadSceneMode.Single);
             } else if (levelStatus[1])
             {
                 SceneManager.LoadScene("Level_1", LoadSceneMode.Single);
