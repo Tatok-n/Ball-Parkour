@@ -5,18 +5,18 @@ using UnityEngine;
 public class GrapplingGun : MonoBehaviour
 {
    private LineRenderer lr;
-   private Vector3 grapplePoint;
+   public Vector3 grapplePoint;
    public LayerMask whatIsGrappleable;
    public Transform gunTip, gunTip2, camera, player;
    public float maxDistance, range;
    public float springdef,damperdef,massScaledef,MaxDistanceRed,activeDamper,activeSpring;
-   private SpringJoint joint;
+   public SpringJoint joint;
    public Vector3 pointlocation;
    public float PredictionSphereCastRadius;
    public Transform PredictionPoint;
    public RaycastHit predictionHit;
    public Vector3 realHitPoint;
-   public Rigidbody rb;
+    public Rigidbody rb;
    public Revamped_Movement mvmt;
    public LineRenderer lr1, lr2;
    public float SwingForce;
@@ -95,6 +95,8 @@ public class GrapplingGun : MonoBehaviour
     joint = player.gameObject.AddComponent<SpringJoint>();
     joint.autoConfigureConnectedAnchor = false;
     joint.connectedAnchor = grapplePoint;
+
+    
 
     float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 

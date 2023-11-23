@@ -136,7 +136,7 @@ public class Revamped_Movement : MonoBehaviour
         foreach (Collider col in hitColliders)
         {
             
-            if (col.tag == "Ground")
+            if (col.tag == "Ground"  || col.tag== "RotatorBoi")
             {important += 1;
             isGrounded = true;
             }

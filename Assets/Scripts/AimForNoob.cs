@@ -10,5 +10,6 @@ public class AimForNoob : MonoBehaviour
     void Update()
     {
         gameObject.GetComponent<Transform>().position = gunpoint.pointlocation;
+     
     }
 }
