@@ -9,7 +9,10 @@ public class AimForNoob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Transform>().position = gunpoint.pointlocation;
-     
+        if (gunpoint.tag == "RotatorBoi" && gunpoint.IsGrappling())
+        {
+            gameObject.GetComponent<Transform>().parent = gunpoint.connectedobject.GetComponent<Transform>(); //makes the aimpoint a child of rotating objects
+        } else {
+            gameObject.GetComponent<Transform>().position = gunpoint.pointlocation; }
     }
 }

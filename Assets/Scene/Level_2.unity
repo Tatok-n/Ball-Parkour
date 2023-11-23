@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03665784, g: 0.05415386, b: 0.09875536, a: 1}
+  m_IndirectSpecularColor: {r: 0.036938176, g: 0.054617226, b: 0.10069919, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1588,6 +1588,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2075098806332450715, guid: c962ae5f1945e804c8395e4818706645,
+        type: 3}
+      propertyPath: jointpoint
+      value: 
+      objectReference: {fileID: 1420856845}
     - target: {fileID: 2075098806998197812, guid: c962ae5f1945e804c8395e4818706645,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4632,7 +4637,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31176
+  m_Name: pb_Mesh31156
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4960,7 +4965,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31100
+  m_Name: pb_Mesh31102
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5124,7 +5129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31164
+  m_Name: pb_Mesh31144
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8239,6 +8244,12 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &1420856845 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2075098807369070739, guid: c962ae5f1945e804c8395e4818706645,
+    type: 3}
+  m_PrefabInstance: {fileID: 63185552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1562583678
 GameObject:
   m_ObjectHideFlags: 0
@@ -8462,7 +8473,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31234
+  m_Name: pb_Mesh31202
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8629,6 +8640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586629393}
+  - component: {fileID: 1586629394}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Ground
@@ -8643,22 +8655,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586629392}
-  m_LocalRotation: {x: 0, y: -0.5742195, z: 0, w: 0.8187014}
+  m_LocalRotation: {x: 0, y: 0.33791664, z: 0, w: 0.94117606}
   m_LocalPosition: {x: -1.9, y: 98.8, z: 30.66}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2012718307214058319}
+  - {fileID: 4889012967355256417}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -70.09, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 39.5, z: 0}
+--- !u!114 &1586629394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586629392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e866d97bc3188ff44b13fa12d6b022bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivot: {fileID: 1586629393}
+  speed: 0.25
+  newrot: {x: 0, y: 0, z: 0}
 --- !u!43 &1636460416
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31112
+  m_Name: pb_Mesh31114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8822,7 +8849,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31206
+  m_Name: pb_Mesh31186
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13176,13 +13203,47 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
---- !u!23 &839270962304423968
+--- !u!4 &4889012967355256417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5229404607214343387}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -2.8201416, y: 6.7263184, z: -1.9544005}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1586629393}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &5229404607214343387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4889012967355256417}
+  - component: {fileID: 8392063117637583300}
+  - component: {fileID: 6021998490654274830}
+  - component: {fileID: 8392063117637583301}
+  m_Layer: 0
+  m_Name: Rotating cylinder
+  m_TagString: RotatorBoi
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &6021998490654274830
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199448500603664885}
+  m_GameObject: {fileID: 5229404607214343387}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -13196,7 +13257,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f0c6f96ee59aaf4689c4cbcef73c3e4, type: 2}
+  - {fileID: -5916316222665649793, guid: 76b394b187ed4c4498f9889199d6ec61, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13218,59 +13279,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1199448500603664885
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2012718307214058319}
-  - component: {fileID: 3188908315663166698}
-  - component: {fileID: 839270962304423968}
-  - component: {fileID: 3188908315663166699}
-  m_Layer: 0
-  m_Name: Rotating cylinder
-  m_TagString: Ground
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2012718307214058319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199448500603664885}
-  m_LocalRotation: {x: -0.7071069, y: 4.6566123e-10, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -2.8201425, y: 6.7263107, z: -1.9543993}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1586629393}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3188908315663166698
+--- !u!33 &8392063117637583300
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199448500603664885}
-  m_Mesh: {fileID: 2534964839176971238, guid: 4b0765c3e6d1f434182a6db476de8fef, type: 3}
---- !u!64 &3188908315663166699
+  m_GameObject: {fileID: 5229404607214343387}
+  m_Mesh: {fileID: 2534964839176971238, guid: 76b394b187ed4c4498f9889199d6ec61, type: 3}
+--- !u!64 &8392063117637583301
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199448500603664885}
+  m_GameObject: {fileID: 5229404607214343387}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: 4b0765c3e6d1f434182a6db476de8fef, type: 3}
+  m_Mesh: {fileID: 2534964839176971238, guid: 76b394b187ed4c4498f9889199d6ec61, type: 3}

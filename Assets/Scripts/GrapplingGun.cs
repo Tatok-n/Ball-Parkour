@@ -13,14 +13,16 @@ public class GrapplingGun : MonoBehaviour
    public SpringJoint joint;
    public Vector3 pointlocation;
    public float PredictionSphereCastRadius;
-   public Transform PredictionPoint;
+   public Transform PredictionPoint,jointpoint;
    public RaycastHit predictionHit;
    public Vector3 realHitPoint;
-    public Rigidbody rb;
+   public Rigidbody rb;
    public Revamped_Movement mvmt;
    public LineRenderer lr1, lr2;
    public float SwingForce;
-   public GameObject sphereboi;
+   public GameObject sphereboi,connectedobject;
+    public string tag;
+    public bool needsrot;
 
     void Awake() {
     //lr = GetComponent<LineRenderer>();
@@ -58,6 +60,10 @@ public class GrapplingGun : MonoBehaviour
             Vector3 Forward = mvmt.orientation.forward;
             Debug.DrawLine(rb.position, Forward, Color.red);
             rb.AddForce(Forward * SwingForce);
+            if (needsrot)
+            {
+                joint.connectedAnchor = jointpoint.position;
+            }
         }
     
    }
@@ -75,6 +81,8 @@ public class GrapplingGun : MonoBehaviour
 
         if (hit.point != Vector3.zero) {
             realHitPoint = hit.point;
+            connectedobject = hit.collider.gameObject;
+            tag = hit.collider.tag;
         }
 
         else if (SphereCastHit.point != Vector3.zero) {
@@ -94,11 +102,17 @@ public class GrapplingGun : MonoBehaviour
     }
     joint = player.gameObject.AddComponent<SpringJoint>();
     joint.autoConfigureConnectedAnchor = false;
-    joint.connectedAnchor = grapplePoint;
 
-    
+    if (tag == "RotatorBoi") {
+        joint.connectedAnchor = jointpoint.position; //sets the anchor point depending on type of object
+            needsrot = true;
+    } else{
+        joint.connectedAnchor = grapplePoint;
+            needsrot = false;
+        }
 
-    float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
+
+        float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
     // The distance grapple will try to keep from grapplepoint
     joint.maxDistance = distanceFromPoint * 1.15f;
@@ -120,14 +134,16 @@ public class GrapplingGun : MonoBehaviour
 
     if (!joint) return;
 
-        lr1.SetPosition(0, gunTip.position);
-        lr1.SetPosition(1, grapplePoint);
         lr2.SetPosition(0, gunTip2.position);
-        lr2.SetPosition(1, grapplePoint);
+        lr1.SetPosition(0, gunTip.position);
+        lr1.SetPosition(1, joint.connectedAnchor);
+        lr2.SetPosition(1, joint.connectedAnchor);
+        
+
     }
 
 
-   void StopGrapple() {
+    void StopGrapple() {
         lr1.positionCount = 0;
         lr2.positionCount = 0;
         Destroy(joint);
