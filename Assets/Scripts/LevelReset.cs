@@ -22,7 +22,7 @@ public class LevelReset : MonoBehaviour
 
     void OnCollisionEnter()
     {
-        Debug.Log("A");
+        
         SceneManager.LoadScene(level, LoadSceneMode.Single);
     }
 }

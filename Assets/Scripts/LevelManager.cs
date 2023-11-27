@@ -24,7 +24,10 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Level_2", LoadSceneMode.Single);
             } else if (levelStatus[1])
             {
-                SceneManager.LoadScene("Level_1", LoadSceneMode.Single);
+                SceneManager.LoadScene("Level_3", LoadSceneMode.Single);
+            } else if (levelStatus[2])
+            {
+                SceneManager.LoadScene("Level_3", LoadSceneMode.Single);
             }
         }
         ChangeNeeded = false;
