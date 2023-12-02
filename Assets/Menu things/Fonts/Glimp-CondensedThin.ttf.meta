@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3a0fff7b885533147bcb9f594576a6d7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Glimp
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e269cc6aae63f4e4a90d2e93a0f2f6eb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 0.79558027
+    m_Value: 0.30370367
   compensation:
     m_OverrideState: 0
     m_Value: 0
@@ -438,25 +438,25 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   toeStrength:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   toeLength:
-    m_OverrideState: 0
-    m_Value: 0.5
+    m_OverrideState: 1
+    m_Value: 0
   shoulderStrength:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   shoulderLength:
-    m_OverrideState: 0
-    m_Value: 0.5
+    m_OverrideState: 1
+    m_Value: 3.8
   shoulderAngle:
-    m_OverrideState: 0
-    m_Value: 0
-  gamma:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
+  gamma:
+    m_OverrideState: 1
+    m_Value: 0.79
   lutTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -478,16 +478,16 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   threshold:
     m_OverrideState: 1
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.088
+    m_Value: 0.037
   scatter:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.291
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -505,7 +505,7 @@ MonoBehaviour:
     m_Value: 2
   m_HighQualityPrefiltering:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   m_HighQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f034cba68ab55e046ae1445a42f18c0e, type: 3}
   m_Name: IndirectLightingController
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   indirectDiffuseLightingMultiplier:
     m_OverrideState: 1
     m_Value: 1
