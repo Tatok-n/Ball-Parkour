@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 0.73875314
+    m_Value: 0.79558027
   compensation:
     m_OverrideState: 0
     m_Value: 0
@@ -151,6 +151,52 @@ MonoBehaviour:
   proceduralSoftness:
     m_OverrideState: 0
     m_Value: 0.5
+--- !u!114 &-5663976501388685395
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+  maximumVelocity:
+    m_OverrideState: 0
+    m_Value: 200
+  minimumVelocity:
+    m_OverrideState: 0
+    m_Value: 2
+  cameraMotionBlur:
+    m_OverrideState: 0
+    m_Value: 1
+  specialCameraClampMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cameraVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraTranslationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraRotationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.03
+  depthComparisonExtent:
+    m_OverrideState: 0
+    m_Value: 1
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 8
 --- !u!114 &-2275536848396381672
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -169,16 +215,16 @@ MonoBehaviour:
     m_Value: 1
   rayTracing:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.47
+    m_Value: 0.71
   directLightingStrength:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.521
   radius:
-    m_OverrideState: 0
-    m_Value: 2
+    m_OverrideState: 1
+    m_Value: 1.21
   spatialBilateralAggressiveness:
     m_OverrideState: 0
     m_Value: 0.15
@@ -351,6 +397,7 @@ MonoBehaviour:
   - {fileID: 3109613372950728030}
   - {fileID: 350944454876939439}
   - {fileID: -2275536848396381672}
+  - {fileID: -5663976501388685395}
 --- !u!114 &350944454876939439
 MonoBehaviour:
   m_ObjectHideFlags: 3

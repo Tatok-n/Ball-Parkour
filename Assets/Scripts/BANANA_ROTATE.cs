@@ -15,7 +15,7 @@ public class BANANA_ROTATE : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         newrot += speed*xyz;
         pivot.eulerAngles = newrot;
