@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class IngameOptions : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class IngameOptions : MonoBehaviour
     public TimeRate tc;
     public MouseController mc;
     public GameObject baseUI;
+    
     // Start is called before the first frame update
 
     public void OptionsExit()

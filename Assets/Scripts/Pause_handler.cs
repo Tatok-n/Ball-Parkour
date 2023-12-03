@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Pause_handler : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Pause_handler : MonoBehaviour
     public GameObject menu;
     public GameObject baseUI;
     public IngameOptions op;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,7 @@ public class Pause_handler : MonoBehaviour
         mc.locked = false;
         mc.vis = true;
         baseUI.SetActive(false);
+        
 
     }
     // Update is called once per frame

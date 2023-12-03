@@ -151,7 +151,7 @@ public class Revamped_Movement : MonoBehaviour
         {
             isGrounded = false;
             JumpForce = 0;
-            Speed = 1f;
+            Speed = 5f;
         }
     }
 

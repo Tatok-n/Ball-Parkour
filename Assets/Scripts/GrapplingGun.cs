@@ -23,6 +23,7 @@ public class GrapplingGun : MonoBehaviour
    public GameObject sphereboi,connectedobject;
     public string tag;
     public bool needsrot;
+    public GameObject pause;
 
     void Awake() {
     //lr = GetComponent<LineRenderer>();
@@ -35,7 +36,11 @@ public class GrapplingGun : MonoBehaviour
     
 
     if (Input.GetMouseButtonDown(0)) {
-        StartGrapple();
+        if (!pause.activeSelf)
+            {
+                StartGrapple();
+            }
+        
     }
     else if (Input.GetMouseButtonUp(0)) {
         StopGrapple();

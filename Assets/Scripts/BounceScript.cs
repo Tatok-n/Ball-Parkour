@@ -33,12 +33,8 @@ public class BounceScript : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         BounceBoost.Play();
-        if (rm.isGrounded)
-        {
-            rm.rb.AddForce(Direction.normalized*Strength);
-        } else {
-            rm.rb.AddForce(Vector3.Reflect(rm.rb.velocity, NormalVect) *Strength);
-        }
+        rm.rb.AddForce(Direction.normalized*Strength);
+        
 
 
 

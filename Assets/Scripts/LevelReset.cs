@@ -25,4 +25,10 @@ public class LevelReset : MonoBehaviour
         
         SceneManager.LoadScene(level, LoadSceneMode.Single);
     }
+
+    void OnTriggerEnter()
+    {
+
+        SceneManager.LoadScene(level, LoadSceneMode.Single);
+    }
 }
